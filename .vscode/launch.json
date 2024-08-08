@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "GDB: 调试已编译的 debug",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/out/build/debug/build_file",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}" ,
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "lldb",
+      "preLaunchTask": "Clang++: Debug", // 名称与 tasks.json 中的任务名称匹配
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "miDebuggerPath": "/Users/mishon/lldb-mi/build/src/lldb-mi"
+    },
+  ]
+}
