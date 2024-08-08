@@ -1,3 +1,0 @@
-/Users/mishon/cpp_template/out/build/release/CMakeFiles/cpp_template.dir
-/Users/mishon/cpp_template/out/build/release/CMakeFiles/edit_cache.dir
-/Users/mishon/cpp_template/out/build/release/CMakeFiles/rebuild_cache.dir
