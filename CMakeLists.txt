@@ -1,6 +1,6 @@
 # 检查 CMake 版本
 cmake_minimum_required(VERSION 3.19)
-project(cpp_01 VERSION 0.1.0 LANGUAGES C CXX)
+project(cpp_template VERSION 0.1.0 LANGUAGES C CXX)
 
 # 设置 C++ 标准
 set(CMAKE_CXX_STANDARD 23)
