@@ -1,41 +1,46 @@
 {
     "version": 3,
     "configurePresets": [
-        {
-            "name": "llvm-debug",
-            "displayName": "LLVM Debug Configure Preset",
-            "description": "Sets Ninja generator, build and install directory with verbose debug information",
-            "generator": "Ninja",
-            "binaryDir": "${sourceDir}/out/build/debug",
-            "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug",
-                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/debug",
-                "CMAKE_CXX_FLAGS_DEBUG": "-g3 -DDEBUG -Wall -Wextra -Wpedantic",
-                "CMAKE_C_FLAGS_DEBUG": "-g3 -DDEBUG -Wall -Wextra -Wpedantic"
-            }
-        },
-        {
-            "name": "llvm-release",
-            "displayName": "LLVM Release Configure Preset",
-            "description": "Sets Ninja generator for Release build with high optimization",
-            "generator": "Ninja",
-            "binaryDir": "${sourceDir}/out/build/release",
-            "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Release",
-                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/release",
-                "CMAKE_CXX_FLAGS_RELEASE": "-O3",
-                "CMAKE_C_FLAGS_RELEASE": "-O3"
-            }
+      {
+        "name": "llvm-debug",
+        "displayName": "LLVM Debug Configure Preset",
+        "description": "Sets Ninja generator, build and install directory with verbose debug information",
+        "generator": "Ninja",
+        "binaryDir": "${sourceDir}/out/build/debug",
+        "cacheVariables": {
+          "CMAKE_BUILD_TYPE": "Debug",
+          "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/debug",
+          "CMAKE_CXX_FLAGS_DEBUG": "-g3 -DDEBUG -Wall -Wextra -Wpedantic",
+          "CMAKE_C_FLAGS_DEBUG": "-g3 -DDEBUG -Wall -Wextra -Wpedantic",
+          "CMAKE_TOOLCHAIN_FILE": "/Users/mishon/vcpkg/scripts/buildsystems/vcpkg.cmake",
+          "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
         }
+      },
+      {
+        "name": "llvm-release",
+        "displayName": "LLVM Release Configure Preset",
+        "description": "Sets Ninja generator for Release build with high optimization",
+        "generator": "Ninja",
+        "binaryDir": "${sourceDir}/out/build/release",
+        "cacheVariables": {
+          "CMAKE_BUILD_TYPE": "Release",
+          "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/release",
+          "CMAKE_CXX_FLAGS_RELEASE": "-O3",
+          "CMAKE_C_FLAGS_RELEASE": "-O3",
+          "CMAKE_TOOLCHAIN_FILE": "/Users/mishon/vcpkg/scripts/buildsystems/vcpkg.cmake",
+          "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+        }
+      }
     ],
     "buildPresets": [
-        {
-            "name": "release",
-            "configurePreset": "llvm-release"
-        },
-        {
-            "name": "debug",
-            "configurePreset": "llvm-debug"
-        }
+      {
+        "name": "release",
+        "configurePreset": "llvm-release"
+      },
+      {
+        "name": "debug",
+        "configurePreset": "llvm-debug"
+      }
     ]
-}
+  }
+  

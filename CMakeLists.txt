@@ -1,9 +1,9 @@
 # 检查 CMake 版本
 cmake_minimum_required(VERSION 3.19)
-project(cpp_template VERSION 0.1.0 LANGUAGES C CXX)
+project(cpp_01 VERSION 0.1.0 LANGUAGES C CXX)
 
 # 设置 C++ 标准
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
@@ -23,3 +23,9 @@ endif()
 
 # 添加可执行文件
 add_executable(build_file src/main.cpp)
+
+# 查找 fmt 包
+find_package(fmt CONFIG REQUIRED)
+
+# 将 fmt 链接到目标
+target_link_libraries(build_file PRIVATE fmt::fmt)
