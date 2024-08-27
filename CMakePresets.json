@@ -1,17 +1,17 @@
 {
-    "version": 8,
+    "version": 3,
     "configurePresets": [
         {
             "name": "llvm-debug",
-            "displayName": "LLVM Debug configure preset",
+            "displayName": "LLVM Debug Configure Preset",
             "description": "Sets Ninja generator, build and install directory with verbose debug information",
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/out/build/debug",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/debug",
-                "CMAKE_CXX_FLAGS_DEBUG": "-g3 -DDEBUG",
-                "CMAKE_C_FLAGS_DEBUG": "-g3 -DDEBUG"
+                "CMAKE_CXX_FLAGS_DEBUG": "-g3 -DDEBUG -Wall -Wextra -Wpedantic",
+                "CMAKE_C_FLAGS_DEBUG": "-g3 -DDEBUG -Wall -Wextra -Wpedantic"
             }
         },
         {
@@ -31,14 +31,10 @@
     "buildPresets": [
         {
             "name": "release",
-            "description": "",
-            "displayName": "",
             "configurePreset": "llvm-release"
         },
         {
             "name": "debug",
-            "description": "",
-            "displayName": "",
             "configurePreset": "llvm-debug"
         }
     ]
